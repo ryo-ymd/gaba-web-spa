@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ガバWebDev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    .fade-enter-active, .fade-leave-active {
+      transition-property: opacity;
+      transition-duration: .25s;
+    }
+
+    .fade-enter-active {
+      transition-delay: .25s;
+    }
+
+    .fade-enter, .fade-leave-active {
+      opacity: 0
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <b-navbar type="dark" variant="dark" class="mb-3">
+    <div class="container">
+      <b-navbar-nav>
+        <b-navbar-brand to="/">ガバWebDev</b-navbar-brand>
+
+        <b-nav-item to="/page1">ページ1</b-nav-item>
+
+        <!-- Navbar dropdowns -->
+        <b-nav-item-dropdown text="API連携" right>
+          <b-dropdown-item to="/apitest1">APIテスト1</b-dropdown-item>
+          <b-dropdown-item to="/apitest2">APIテスト2</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+    </div>
+  </b-navbar>
+  <transition name="fade">
+    <router-view></router-view>
+  </transition>
+</div>
+<script src="/bundle.js"></script>
+</body>
+</html>
